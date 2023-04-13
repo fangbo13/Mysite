@@ -120,16 +120,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# settings.py
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    os.path.join(BASE_DIR, "static", "bootstrap", "css"),
-    os.path.join(BASE_DIR, "static", "bootstrap", "js"),  # 添加 Bootstrap 的 JS 文件路径
-    os.path.join(BASE_DIR, "static", "fontawesome", "css"),  # 添加 Font Awesome 的 CSS 文件路径
-    os.path.join(BASE_DIR, "static", "fontawesome", "webfonts"),  # 添加 Font Awesome 的字体文件路径
-]
+STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 
 

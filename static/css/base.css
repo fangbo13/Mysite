@@ -4,8 +4,17 @@ html, body {
 }
 
 .footer {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    height: 100px;
+    height: 105px;
 }
 
+@font-face {
+    font-family: 'Kaushan Script';
+    src: 
+        url('/static/fonts/KaushanScript-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'ExtraBold 800 Italic';
+    src: 
+        url('/static/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype'),
+        url('/static/fonts/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+}

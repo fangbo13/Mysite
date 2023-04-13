@@ -3,6 +3,10 @@ body {
     padding: 0;
 }
 
+
+
+
+/* --------------------------------------------------------------------------------------------------- */
 #navbar {
     position: fixed;
     top: 0;
@@ -18,3 +22,30 @@ body {
 #navbar.scrolled {
     background-color: rgba(255, 255, 255, 0.9) !important;
 }
+
+/* --------------------------------------------------------------------------------------------------- */
+
+/* 导航栏链接样式 */
+.navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s;
+}
+
+/* 鼠标悬停时的动画效果和颜色变化 */
+.navbar-nav .nav-link:hover {
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+
+/* --------------------------------------------------------------------------------------------------- */
+.fa-bounce {
+    animation: fa-bounce 0.5s infinite linear;
+}
+
+.fa-shake {
+    animation: fa-shake 0.5s infinite linear;
+}
+
