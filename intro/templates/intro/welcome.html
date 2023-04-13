@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- Link to welcome.css -->
+<link rel="stylesheet" href="{% static 'css/welcome.css' %}">
+
+<!-- Personal Introduction -->
+<section id="home">
+    <video autoplay loop muted playsinline>
+        <source src="{% static 'videos/cloud.mp4' %}" type="video/mp4">
+    </video>
+    <div id="home-content" data-aos="fade-up">
+        <h1 id="home-heading" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">Welcome to My
+            Website</h1>
+        <img src="{% static 'img/haibo.jpg' %}" alt="Your photo" data-aos="zoom-in-up" data-aos-duration="1500">
+        <p data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="2000">Hello, I am Haibo Fang,
+            and this is my personal website.</p>
+        <p data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="2000">Hola, soy Fang Haibo, y
+            este es mi sitio web personal.</p>
+    </div>
+</section>
+
+<!-- About -->
+<section id="about" class="bg-light bg-img-2">
+    <h2>about</h2>
+</section>
+
+<!-- resume -->
+<section id="resume" class="bg-primary">
+    <h2 data-aos="fade-down">resume</h2>
+</section>
+
+<!-- work -->
+<section id="work" class="bg-light">
+<h1>work</h1>
+</section>
+
+
+<!-- Contact -->
+<section id="contact" class="bg-success">
+    <h2 data-aos="fade-down">Contact Me</h2>
+    <p data-aos="fade-right"><i class="fas fa-envelope"></i> Email: example@example.com</p>
+    <p data-aos="fade-left"><i class="fas fa-phone"></i> Phone: +1234567890</p>
+</section>
+
+
+<script>
+    AOS.init();
+</script>
+{% include 'intro/footer.html' %}
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

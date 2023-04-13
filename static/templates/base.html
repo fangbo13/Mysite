@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}">
+    <!-- AOS -->
+    <link rel="stylesheet" href="{% static 'aos-master/dist/aos.css' %}" />
+
+</head>
+
+
+<body>
+    {% include 'intro/_navbar.html' %}
+    <div class="my-5 text-center container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <script src="{% static 'jquery/jquery-3.6.4.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'aos-master/dist/aos.js' %}"></script>
+    <script src="{% static 'js/_navbar.js' %}"></script>
+    <script>
+        AOS.init();
+    </script>
+    {% block js %}
+    {% endblock %}
+
+</body>
+
+</html>
