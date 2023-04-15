@@ -6,68 +6,65 @@
 
 <!-- Link to welcome.css -->
 <link rel="stylesheet" href="{% static 'css/welcome.css' %}">
-
 <!-- Personal Introduction -->
 <section id="home">
-    <video autoplay loop muted playsinline>
-        <source src="{% static 'videos/sea.mp4' %}" type="video/mp4">
-    </video>
-    <div id="home-content" data-aos="fade-up">
-        <h1 id="home-heading" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">Hi,I'm Haibo Fang
-        </h1>
-        <img src="{% static 'img/haibo.jpg' %}" alt="Your photo" data-aos="zoom-in-up" data-aos-duration="1500">
-        <div class="parent-container">
-            <h2 data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="2000">Welcome to My
-                PortfolioWebsite</h2>
-            <h2 data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="2000">Fáilte chuig mo
-                láithreán gréasáin Portfóilió.</h2>
-        </div>
-
+  <video autoplay loop muted playsinline>
+    <source src="{% static 'videos/cloud.mp4' %}" type="video/mp4">
+  </video>
+  <div id="home-content" data-aos="fade-up">
+    <h1 id="home-heading" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">Hi,I'm Haibo Fang
+    </h1>
+    <img src="{% static 'img/haibo.jpg' %}" alt="Your photo" data-aos="zoom-in-up" data-aos-duration="1500">
+    <div class="parent-container">
+      <h2 data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="2000">Welcome to My
+        PortfolioWebsite</h2>
+      <h2 data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="2000">Fáilte chuig mo
+        láithreán gréasáin Portfóilió.</h2>
     </div>
+
+  </div>
 </section>
 
 <!-- About -->
 <section id="about">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h2 class="animate__animated animate__fadeInDown">About Me</h2>
-          <p class="animate__animated animate__fadeInUp">Hello, I'm [Your Name], and I'm a [Your Profession/Job Title] with a passion for [Your Passion].</p>
-          <p class="animate__animated animate__fadeInUp">In my free time, I enjoy [Your Hobbies] and [Your Personal Interest].</p>
-          <a href="{{ MEDIA_URL }}Trinity_Main_Logo.jpg"  class="btn btn-primary animate__animated animate__fadeInUp" download>Download Resume</a>  
-        </div>
-        <div class="col-md-6">
-          <img src="{% static 'img/fangbo.jpg' %}" alt="haibo_fang" class="img-fluid animate__animated animate__fadeInRight">
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2 class="animate__animated ">About Me</h2>
+        <p class="animate__animated ">Hi! I'm a master's student graduating in 2024, with degrees in Business Analytics from Trinity College Dublin and Computer Science from Coventry University. Passionate about data analysis and intelligent solution development, I excel in teamwork and communication.</p>
+        <p class="animate__animated ">In my free time, I enjoy health, fitness, and outdoor activities, maintaining my well-being. I eagerly anticipate growth in my future career.</p>
+               <a href="{{ MEDIA_URL }}Trinity_Main_Logo.jpg" alt="Download"  class="btn btn-primary animate__animated "
+          download>Download Resume</a>
+      </div>
+      <div class="col-md-6">
+        <img src="{% static 'img/fangbo.jpg' %}" alt="haibo_fang"
+          class="img-fluid animate__animated ">
       </div>
     </div>
-  </section>
-  
-  
-  
-
+  </div>
+</section>
 
 <!-- resume -->
 <section id="resume" class="bg-primary">
-    <h3 data-aos="fade-down">resume</h3>
+  <h3 data-aos="fade-down">resume</h3>
 </section>
 
 <!-- work -->
 <section id="work" class="bg-light">
-    <h3>work</h3>
+  <h3>work</h3>
 </section>
 
 
 <!-- Contact -->
 <section id="contact" class="bg-success">
-    <h2 data-aos="fade-down">Contact Me</h2>
-    <p data-aos="fade-right"><i class="fas fa-envelope"></i> Email: example@example.com</p>
-    <p data-aos="fade-left"><i class="fas fa-phone"></i> Phone: +1234567890</p>
+  <h2 data-aos="fade-down">Contact Me</h2>
+  <p data-aos="fade-right"><i class="fas fa-envelope"></i> Email: example@example.com</p>
+  <p data-aos="fade-left"><i class="fas fa-phone"></i> Phone: +1234567890</p>
 </section>
 
 
 <script>
-    AOS.init();
+  AOS.init();
 </script>
 {% include 'intro/footer.html' %}
 
@@ -75,5 +72,6 @@
 
 
 {% block js %}
+<script src="{% static 'js/welcome.js' %}"></script>
 <script src="{% static 'js/_navbar.js' %}"></script>
 {% endblock %}
