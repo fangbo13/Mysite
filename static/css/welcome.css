@@ -107,15 +107,8 @@ h1 {
 }
 
 /* ---------------------------------------------about section-------------------------------------*/
-/* #about {
-    background-image: url('../img/ocean.jpg');
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-} */
-/* --------------------------------------------- */
 #about {
-    background-image: url('../img/sky.jpg');
+    background-image: url('../img/forest.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -131,7 +124,7 @@ h1 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.3);
     z-index: -1;
 }
 
