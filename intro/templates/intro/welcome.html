@@ -6,22 +6,22 @@
 
 <!-- Link to welcome.css -->
 <link rel="stylesheet" href="{% static 'css/welcome.css' %}">
+
 <!-- Personal Introduction -->
 <section id="home">
   <video autoplay loop muted playsinline>
-    <source src="{% static 'videos/Pop.mp4' %}" type="video/mp4">
+    <source src="{% static 'videos/sea.mp4' %}" type="video/mp4">
   </video>
   <div id="home-content" data-aos="fade-up">
-    <h1 id="home-heading" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">Hi,I'm Haibo Fang
+    <h1 id="home-heading" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">Hi, I'm Haibo Fang
     </h1>
     <img src="{% static 'img/haibo.jpg' %}" alt="Your photo" data-aos="zoom-in-up" data-aos-duration="1500">
-    <div class="parent-container">
-      <h2 data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="2000">Welcome to My
-        PortfolioWebsite</h2>
-      <h2 data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="2000">Fáilte chuig mo
-        láithreán gréasáin Portfóilió.</h2>
+    <div class="home-parent-container">
+      <h3 data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="2000">Welcome to My
+        Portfolio Website</h3>
+      <h4 data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="2000">Fáilte chuig mo
+        láithreán gréasáin Portfóilió</h4>
     </div>
-
   </div>
 </section>
 
@@ -30,23 +30,74 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <h2 >About Me</h2>
-        <p >Hi! I'm a master's student graduating in 2024, with degrees in Business Analytics from Trinity College Dublin and Computer Science from Coventry University. Passionate about data analysis and intelligent solution development, I excel in teamwork and communication.</p>
-        <p >In my free time, I enjoy health, fitness, and outdoor activities, maintaining my well-being. I eagerly anticipate growth in my future career.</p>
-               <a href="{{ MEDIA_URL }}Trinity_Main_Logo.jpg" alt="Download"  class="btn btn-primary animate__animated "
+        <h2 class="about-title">About Me</h2>
+        <p class="about-text">
+          "Hello! I'm a driven master's student at Trinity College Dublin, passionate about data analysis, intelligent
+          solutions, and teamwork. With a BSc in Computer Science from Coventry University,
+          I'm excited to apply these skills to my future career and make an impact."
+        </p>
+        <p class="about-text">In my leisure time, I actively pursue health, fitness, and outdoor activities to maintain
+          my well-being. I am eager to embrace growth and challenges in my upcoming professional journey."</p>
+        <a href="{{ MEDIA_URL }}Trinity_Main_Logo.jpg" alt="Download" class="btn btn-primary animate__animated"
           download>Download Resume</a>
       </div>
       <div class="col-md-6">
-        <img src="{% static 'img/fangbo.jpg' %}" alt="haibo_fang"
-          class="img-fluid animate__animated ">
+        <img src="{% static 'img/fangbo.jpg' %}" alt="haibo_fang" class="img-fluid animate__animated">
       </div>
     </div>
   </div>
 </section>
 
 <!-- resume -->
-<section id="resume" class="bg-primary">
-  <h3 data-aos="fade-down">resume</h3>
+<section id="resume" class="bg-light">
+  <div class="resume-container">
+      <h2 class="resume-section-title">RESUME</h2>
+      <div class="resume-sections">
+          <div class="resume-education-section">
+              <h3 class="resume-section-heading">Education</h3>
+              <ul class="resume-education-list">
+                  <li>
+                      <h4 class="resume-degree-title">Master of Science in Data Science</h4>
+                      <p class="resume-school-name">Trinity College Dublin</p>
+                      <p class="resume-graduation-date">Expected graduation: May 2024</p>
+                  </li>
+                  <li>
+                      <h4 class="resume-degree-title">Bachelor of Science in Computer Science</h4>
+                      <p class="resume-school-name">Coventry University</p>
+                      <p class="resume-graduation-date">Graduated: July 2022.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Award: First Class</p>
+                  </li>
+              </ul>
+          </div>
+          <div class="resume-skills-section">
+              <h3 class="resume-section-heading">Skills</h3>
+              <ul class="resume-skills-list">
+                  <li>Data analysis</li>
+                  <li>Python programming</li>
+                  <li>Machine learning</li>
+                  <li>Teamwork</li>
+              </ul>
+          </div>
+      </div>
+      <div class="resume-certifications-section">
+          <h3 class="resume-section-heading">Certifications</h3>
+          <ul class="resume-certifications-list">
+              <li>Microsoft Certified: Azure AI Fundamentals</li>
+              <li>Google Cloud Certified: Professional Data Engineer</li>
+          </ul>
+      </div>
+      <div class="resume-projects-section">
+          <h3 class="resume-section-heading">Projects</h3>
+          <ul class="resume-projects-list">
+              <li>
+                  <h4 class="resume-project-title">Machine Learning for Stock Prediction</h4>
+                  <p class="resume-project-description">Developed a machine learning algorithm to predict stock prices based on historical data.</p>
+              </li>
+              <li>
+                  <h4 class="resume-project-title">Natural Language Processing for Sentiment Analysis</h4>
+                  <p class="resume-project-description">Used natural language processing techniques to analyze customer reviews and determine sentiment towards a product.</p>
+              </li>
+          </ul>
+      </div>
 </section>
 
 <!-- work -->

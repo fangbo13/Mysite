@@ -28,85 +28,100 @@ section {
 }
 
 /* ---------------------------------------------Home section-------------------------------------*/
-h1 {
-    font: 120px/1.1em 'Kaushan Script', sans-serif;
-    color: #fff;
-    position: relative;
-    letter-spacing: -2px;
-    margin: 0 auto 18px auto;
-    text-shadow: 0px 1px 3px rgba(0, 0, 0, .8);
-}
-
-#home-content h2 {
-    font-family: 'ExtraBold 800 Italic', sans-serif;
-    font-size: 40px;
-    color: #ffffff;
-    margin: 0 auto;
-    width: 70%;
-    display: inline-block;
-    white-space: nowrap;
-}
-
-.parent-container {
-    text-align: center;
-}
-
-
-#home {
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-    max-width: 100%;
-    margin: 0;
-    z-index: -1;
-}
-
+:root {
+    --home-font-kaushan: 'Kaushan Script', sans-serif;
+    --home-font-extrabold: 'ExtraBold 800 Italic', sans-serif;
+    --home-white: #ffffff;
+    --home-text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+  }
+  
+  #home {
+      position: relative;
+      overflow: hidden;
+      height: 100vh;
+      max-width: 100%;
+      margin: 0;
+      z-index: -1;
+  }
+  
 #home video {
     position: fixed;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
     top: 0;
     left: 0;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
 }
-
-#home::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-#home-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-
-#home-heading {
-    color: #ffffff;
-}
-
-#home img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    margin: 1rem;
-}
-
-#home-text {
-    color: #ffffff;
-    font-size: 1.5rem;
-}
+  
+  #home-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: var(--home-white);
+  }
+  
+  #home-heading {
+      font: 120px/1.1em var(--home-font-kaushan);
+      letter-spacing: -2px;
+      margin: 0 auto 18px auto;
+      text-shadow: var(--home-text-shadow);
+  }
+  
+  .home-parent-container {
+      text-align: center;
+      width: 70%;
+      margin: 0 auto;
+  }
+  
+  #home-content h3 {
+    font-family: var(--home-font-extrabold);
+    font-size: 42px;
+    margin: 0 auto;
+    
+  }
+  
+  #home-content h4 {
+    font-family: var(--home-font-extrabold);
+    font-size: 30px;
+    margin: 0 auto;
+    white-space: nowrap;
+    
+  }
+  
+  #home img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      margin: 1rem;
+  }
+  
+  @media (max-width: 767px) {
+    #home-heading {
+      font-size: 80px;
+    }
+  
+    #home-content h2 {
+      font-size: 24px;
+      white-space: normal;
+    }
+  }
+  
 
 /* ---------------------------------------------about section-------------------------------------*/
+:root {
+    --about-font-primary: 'Montserrat', sans-serif;
+    --about-font-secondary: 'Raleway', sans-serif;
+    --about-white: #ffffff;
+    --about-black-rgba: rgba(0, 0, 0, 0.4);
+    --about-btn-hover-bg: #40838e;
+    --about-btn-hover-gradient: linear-gradient(to bottom, #17a2b8, #127e8a);
+    --about-btn-hover-border: #127e8a;
+    --about-transition-duration: 0.3s;
+    --about-animation-duration: 1s;
+}
+
 #about {
     background-image: url('../img/forest.jpg');
     background-size: cover;
@@ -124,36 +139,31 @@ h1 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: var(--about-black-rgba);
     z-index: -1;
 }
 
-/* --------------------------------------------- */
-#about h2 {
-    font-family: Arial  sans-serif;
-    font-size: 36px;
-    font-weight: 600;
-    margin-bottom: 30px;
-    /* animation-name:fadeInDownBig; */
-    animation-fill-mode: both;
-    color: #ffffff;
-  }
-  
-#about p {
-    font-family: Arial  sans-serif;
-    font-size: 18px;
-    line-height: 1.8;
-    margin-bottom: 30px;
-    /* animation-name: backInUp; */
-    animation-fill-mode: both;
-    color: #ffffff;
+.about-title {
+    font-family: var(--about-font-primary);
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: var(--about-white);
 }
 
-/* --------------------------------------------- */
+.about-text {
+    font-family: var(--about-font-secondary);
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: var(--about-white);
+}
+
 #about img {
     max-width: 70%;
     border-radius: 20px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition:
+    transform var(--about-transition-duration) ease-in-out, box-shadow var(--about-transition-duration) ease-in-out;
 }
 
 #about img:hover {
@@ -162,35 +172,159 @@ h1 {
     animation-name: tada;
 }
 
-/* --------------------------------------------- */
 .btn-primary:hover {
-    background-color: #40838e;
-    background-image: linear-gradient(to bottom, #17a2b8, #127e8a);
-    border-color: #127e8a;
+    background-color: var(--about-btn-hover-bg);
+    background-image: var(--about-btn-hover-gradient);
+    border-color: var(--about-btn-hover-border);
     animation-name: pulse;
 }
 
-/* --------------------------------------------- */
 .animate__animated {
-    animation-duration: 1s;
+    animation-duration: var(--about-animation-duration);
     animation-fill-mode: both;
 }
 
-
-/* ---------------------------------------------Project section-------------------------------------*/
-
-
-/* ---------------------------------------------contact section-------------------------------------*/
-.contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+@media (max-width: 767px) {
+  #about img {
+    max-width: 100%;
+  }
 }
 
-.contact p {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+/* ---------------------------------------------resume section-------------------------------------*/
+:root {
+  --font-Segoe: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --resume-text-color: #333;
+  --resume-primary-color: #0a7f8a;
+  --resume-secondary-color: #666;
+  --resume-white-space: 16px;
+  --resume-title-font-size: 2.5rem;
+  --resume-heading-font-size: 1.8rem;
+  --resume-degree-font-size: 1.4rem;
+  --resume-text-font-size: 1.2rem;
+  --resume-list-item-hover-color: #f2f2f2;
+  --resume-icon-color: #0a7f8a;
+  --resume-icon-size: 18px;
 }
+
+.resume-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: var(--font-Segoe);
+  line-height: 1.6;
+  color: var(--resume-text-color);
+}
+
+.resume-section-title {
+  font-size: var(--resume-title-font-size);
+  font-weight: bold;
+  color: var(--resume-primary-color);
+  margin-bottom: 40px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.resume-sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: var(--resume-white-space);
+}
+
+.resume-certifications-section, .resume-projects-section {
+  margin-top: var(--resume-white-space);
+}
+
+.resume-education-section, .resume-skills-section, .resume-certifications-section, .resume-projects-section {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 30px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  transition: box-shadow 0.3s;
+}
+
+.resume-education-section:hover, .resume-skills-section:hover, .resume-certifications-section:hover, .resume-projects-section:hover {
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.24);
+}
+
+.resume-section-heading {
+  font-size: var(--resume-heading-font-size);
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--resume-text-color);
+}
+
+.resume-education-list, .resume-skills-list, .resume-certifications-list, .resume-projects-list {
+  list-style: none;
+  padding: 0;
+}
+
+.resume-education-list li, .resume-skills-list li, .resume-certifications-list li, .resume-projects-list li {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: var(--resume-list-item-hover-color);
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.resume-education-list li:hover, .resume-skills-list li:hover, .resume-certifications-list li:hover, .resume-projects-list li:hover {
+  background-color: var(--resume-white-space);
+}
+
+.resume-degree-title, .resume-certification-title, .resume-project-title {
+  font-weight: bold;
+  font-size: var(--resume-degree-font-size);
+  margin-bottom: 5px;
+}
+
+.resume-school-name, .resume-certification-author, .resume-project-description {
+  font-size: var(--resume-text-font-size);
+  color: var(--resume-secondary-color);
+}
+
+.resume-skills-list li {
+  display: flex;
+  align-items: center;
+}
+
+.resume-skills-list li::before {
+  content: '';
+  display: inline-block;
+  width: var(--resume-icon-size);
+  height: var(--resume-icon-size);
+  background-color: var(--resume-icon-color);
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .resume-sections {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-container {
+    padding: 30px 20px;
+  }
+
+  .resume-section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .resume-education-section, .resume-skills-section, .resume-certifications-section, .resume-projects-section {
+    padding: 20px;
+  }
+}
+
+  
 
 
 /* ---------------------------------------------Background section-------------------------------------*/
