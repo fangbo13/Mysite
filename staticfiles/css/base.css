@@ -1,8 +1,12 @@
 /* custom.css */
 html, body {
     height: 100%;
+    
 }
 
+html{
+    scroll-behavior: smooth;
+}
 .footer {
     height: 105px;
 }
@@ -17,4 +21,10 @@ html, body {
     src: 
         url('/static/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype'),
         url('/static/fonts/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: 
+        url('/static/fonts/OpenSans-Italic-VariableFont_wdth,wght.ttf') format('truetype'),
+        url('/static/fonts/OpenSans-VariableFont_wdth,wght.ttf') format('truetype');
 }

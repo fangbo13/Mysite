@@ -1,8 +1,8 @@
+ // ----------------------获取skillbar的值修改并传入css中----------------------
 document.addEventListener("DOMContentLoaded", function () {
-    const skillRatings = document.querySelectorAll(".skill-rating");
-    skillRatings.forEach((rating) => {
-        const level = rating.getAttribute("data-level");
-        rating.style.setProperty("--level", `${level}%`);
+    const skillBars = document.querySelectorAll(".skill-bar");
+    skillBars.forEach((bar) => {
+        const level = bar.getAttribute("data-level");
+        bar.style.width = `${level}%`;
     });
 });
-

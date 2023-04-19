@@ -9,13 +9,18 @@
 
 <!-- Personal Introduction -->
 <section id="home">
-  <video autoplay loop muted playsinline>
+  <!-- <video autoplay loop muted playsinline>
     <source src="{% static 'videos/cloud.mp4' %}" type="video/mp4">
-  </video>
-  <div id="home-content" data-aos="fade-up">
+    <source src="{% static 'videos/cloud.webm' %}" type="video/webm">
+  </video> -->
+  <div >
+    <img class="home-background" src="{% static 'img/mooncake.jpg' %}" alt="home-background">
+  </div>
+  
+  <div id="home-content" data-aos="fade-up" role="main">
     <h1 id="home-heading" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">Hi, I'm Haibo Fang
     </h1>
-    <img src="{% static 'img/haibo.jpg' %}" alt="Your photo" data-aos="zoom-in-up" data-aos-duration="1500">
+    <img class="home-photo" src="{% static 'img/haibo.jpg' %}" alt="Haibo Fang's photo" data-aos="zoom-in-up" data-aos-duration="1500">
     <div class="home-parent-container">
       <h3 data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="2000">Welcome to My
         Portfolio Website</h3>
@@ -26,19 +31,20 @@
 </section>
 
 <!-- About -->
-<section id="about">
+<section id="about" >
   <div class="container">
     <div class="row">
       <div class="col-md-6">
         <h2 class="about-title">About Me</h2>
         <p class="about-text">
-          "Hello! I'm a driven master's student at Trinity College Dublin, passionate about data analysis, intelligent
+          Hello! I'm a driven master's student at Trinity College Dublin, passionate about data analysis, intelligent
           solutions, and teamwork. With a BSc in Computer Science from Coventry University,
-          I'm excited to apply these skills to my future career and make an impact."
+          I'm excited to apply these skills to my future career and make an impact.
         </p>
         <p class="about-text">In my leisure time, I actively pursue health, fitness, and outdoor activities to maintain
-          my well-being. I am eager to embrace growth and challenges in my upcoming professional journey."</p>
-        <a href="{{ MEDIA_URL }}Trinity_Main_Logo.jpg" alt="Download" class="btn btn-primary animate__animated"
+          my well-being. I am eager to embrace growth and challenges in my upcoming professional journey."
+        </p>
+        <a href="{{ MEDIA_URL }}Trinity_Main_Logo.jpg" download alt="Download Resume" class="btn btn-primary animate__animated"
           download>Download Resume</a>
       </div>
       <div class="col-md-6">
@@ -48,13 +54,14 @@
   </div>
 </section>
 
+
 <!-- resume -->
 <section id="resume">
   <div class="resume-container">
     <!-- <h2 class="resume-section-title">RESUME</h2> -->
     <div class="resume-sections">
         <div class="resume-education-section">
-        <h3 class="resume-section-heading">Education</h3>
+        <h3 class="resume-section-heading">Education Background</h3>
         <ul class="resume-education-list">
           <li>
             <div class="timeline"></div>
@@ -75,32 +82,32 @@
           <ul class="resume-skills-list">
             <li class="skill-item">
               <span><i class="fas fa-code"></i> HTML</span>
-              <div class="skill-rating">
-                <div class="skill-bar" style="width: 90%;"></div>
+              <div class="skill-rating" >
+                <div class="skill-bar" data-level="90"></div>
               </div>
             </li>
             <li class="skill-item">
               <span><i class="fab fa-css3-alt"></i> CSS</span>
-              <div class="skill-rating">
-                <div class="skill-bar" style="width: 80%;"></div>
+              <div class="skill-rating" >
+                <div class="skill-bar" data-level="80"></div>
               </div>
             </li>
             <li class="skill-item">
               <span><i class="fab fa-js"></i> JavaScript</span>
-              <div class="skill-rating">
-                <div class="skill-bar" style="width: 60%;"></div>
+              <div class="skill-rating" >
+                <div class="skill-bar" data-level="60"></div>
               </div>
             </li>
             <li class="skill-item">
               <span><i class="fas fa-server"></i> Django</span>
-              <div class="skill-rating">
-                <div class="skill-bar" style="width: 70%;"></div>
+              <div class="skill-rating" >
+                <div class="skill-bar" data-level="70"></div>
               </div>
             </li>
             <li class="skill-item">
               <span><i class="fab fa-react"></i> React</span>
-              <div class="skill-rating">
-                <div class="skill-bar" style="width: 40%;"></div>
+              <div class="skill-rating" >
+                <div class="skill-bar" data-level="40"></div>
               </div>
             </li>
           </ul>

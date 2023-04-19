@@ -1,8 +1,12 @@
 /* custom.css */
 html, body {
     height: 100%;
+    
 }
 
+html{
+    scroll-behavior: smooth;
+}
 .footer {
     height: 105px;
 }

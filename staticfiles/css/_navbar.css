@@ -3,10 +3,6 @@ body {
     padding: 0;
 }
 
-
-
-
-/* --------------------------------------------------------------------------------------------------- */
 #navbar {
     position: fixed;
     top: 0;
@@ -15,44 +11,62 @@ body {
     z-index: 1000;
 }
 
-/* #navbar.bg-transparent {
-    background-color: rgba(255, 255, 255, 0) !important;
-}
-
-#navbar.scrolled {
-    background-color: rgba(255, 255, 255, 0.9) !important;
-} */
-
-
 #navbar.bg-transparent {
-    background-color: rgba(255, 255, 255, 0) ;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 #navbar.scrolled {
     background-color: rgba(255, 255, 255, 0.9);
 }
 
-/* --------------------------------------------------------------------------------------------------- */
-/* 导航栏链接样式 */
-.navbar-nav .nav-link {
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: color 0.3s, transform 0.3s;
+.nav-link {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+.navbar_sideHead{
+    color: #000000;
 }
 
-/* 鼠标悬停时的动画效果和颜色变化 */
-.navbar-nav .nav-link:hover {
-    color: #fff;
-    transform: translateY(-2px);
+.nav-link-bg {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+    padding: 0 8px;
+    width: 90px;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px; /* 添加这一行以使文本垂直居中 */
+    color: inherit;
+}
+.nav-link-bg.active {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-#navbarNav .nav-link:hover span {
+
+.nav-link-bg:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.nav-link:hover {
     animation-name: fa-bounce;
-    animation-duration: 0.5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  }
-  
+    animation-duration: 1s;
+    color: #ffff;
+}
 
-/* --------------------------------------JS 动画！------------------------------------------------------------ */
+
+.nav-site:hover {
+    animation-name: rubberBand;
+    animation-duration: 1s;
+    color: #ffff;
+}
+
+@media (max-width: 991.98px) {
+    #navbarNav {
+        position: absolute;
+        top: 56px;
+        right: 0; /* 确保菜单靠右对齐 */
+    }
+}
