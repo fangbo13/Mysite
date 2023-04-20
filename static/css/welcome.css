@@ -126,7 +126,7 @@ background-color: rgba(0, 0, 0, 0.9);
   --about-animation-duration: 1s;
 }
 #about {
-background-image: url('../img/moon.jpg ');
+background-image: url('../img/grant.jpg ');
 background-size: cover;
 background-attachment: fixed;
 background-position: center;
@@ -465,61 +465,125 @@ will-change: transform, box-shadow;
 
 /* ---------------------------------------------works section-------------------------------------*/
 /* ---------------------------------------------works section-------------------------------------*/
+/* Import Font Awesome icons */
+
 #work {
+  background-color: #f8f8f8;
+  background-image: linear-gradient(45deg, #f8f8f8 50%, #e0e0e0 50%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px 0;
+}
+
+/* Gallery Container */
+#work .gallery-container {
   display: flex;
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(90deg, #ebeeee 65%, #3f3e3e 35%);
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 24px;
 }
 
-.work-container {
-  width: 70%;
-  padding-right: 20px;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Card */
+#work .card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  flex: 0 0 calc(33.333% - 1rem);
+  margin-bottom: 1rem;
+  overflow: hidden;
+  padding: 16px;
   position: relative;
+  transition: all 0.3s ease;
 }
 
-.work-title {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 36px;
-  z-index: 10;
+/* Card hover effect */
+#work .card:hover {
+  background-color: #f8f8f8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
 }
 
-.work-image-container {
-  position: relative;
-  width: 450px;
-  height: 300px;
-}
-
-img {
+/* Card Thumbnail */
+#work .thumbnail {
   display: block;
-  width: 100%;
-  height: 100%;
+  height: auto;
+  max-width: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+  width: 100%;
 }
 
+#work .card:hover .thumbnail {
+  opacity: 1;
+}
 
-.work-description {
+/* Card Info */
+#work .card-info {
+  background-color: rgba(255, 255, 255, 0.8);
+  bottom: 0;
+  opacity: 0;
+  padding: 16px;
   position: absolute;
-  left: 70%;
-  top: 0;
-  background-color: white;
-  width: 300px;
-  height: 200px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start; /* 将 justify-content 属性更改为 flex-start */
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+  width: 100%;
 }
 
+#work .card:hover .card-info {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-  
+/* Card Title */
+#work .card-info h3 {
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
 
+/* Card Description */
+#work .card-info p {
+  color: #666;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon Style */
+#work .card-info i {
+  color: #333;
+  margin-right: 8px;
+  vertical-align: middle;
+  transition: color 0.3s ease;
+}
+
+#work .card:hover .card-info i {
+  color: #666;
+}
+
+/* Responsive */
+  /* Responsive */
+  @media screen and (max-width: 767px) {
+    #work .card {
+      flex: 0 0 calc(50% - 1rem);
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    #work .card {
+      flex: 0 0 100%;
+    }
+  }
 
 
 
