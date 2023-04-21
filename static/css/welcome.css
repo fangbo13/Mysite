@@ -125,25 +125,25 @@ background-color: rgba(0, 0, 0, 0.9);
   --about-transition-duration: 0.3s;
   --about-animation-duration: 1s;
 }
-#about {
-background-image: url('../img/grant.jpg ');
-background-size: cover;
-background-attachment: fixed;
-background-position: center;
-z-index: 1;
-position: relative;
-padding: 100px 0;
+
+.about-section {
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  z-index: 1;
+  position: relative;
+  padding: 100px 0;
 }
 
 #about::before {
-content: "";
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background: var(--about-black-rgba);
-z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--about-black-rgba);
+  z-index: -1;
 }
 
 .about-title {
@@ -464,67 +464,58 @@ will-change: transform, box-shadow;
 }
 
 /* ---------------------------------------------works section-------------------------------------*/
-/* ---------------------------------------------works section-------------------------------------*/
-/* Import Font Awesome icons */
-
+/* ---------------------------------------------work section-------------------------------------*/
 #work {
-  background-color: #f8f8f8;
-  background-image: linear-gradient(45deg, #f8f8f8 50%, #e0e0e0 50%);
-  background-position: center;
-  background-repeat: no-repeat;
+  background: linear-gradient(45deg,#f8f8f8 50%, #e0e0e0 50%);
   background-size: cover;
   padding: 50px 0;
-}
-
-/* Gallery Container */
-#work .gallery-container {
+  }
+  
+  /* ---------------------------------------------gallery container-------------------------------------*/
+  .gallery-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0 auto;
+  justify-content: space-around;
   max-width: 1200px;
+  margin: 0 auto;
   padding: 24px;
-}
-
-/* Card */
-#work .card {
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  flex: 0 0 calc(33.333% - 1rem);
-  margin-bottom: 1rem;
-  overflow: hidden;
-  padding: 16px;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-/* Card hover effect */
-#work .card:hover {
+  gap: 1rem;
+  }
+  
+  /* ---------------------------------------------card-------------------------------------*/
+  .card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    flex: 0 0 calc(50% - 1rem); /* Change this value to adjust the card width */
+    margin-bottom: 1rem;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+  
+  
+  .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   background-color: #f8f8f8;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transform: scale(1.05);
-}
-
-/* Card Thumbnail */
-#work .thumbnail {
+  }
+  
+  /* ---------------------------------------------thumbnail-------------------------------------*/
+  .thumbnail {
   display: block;
+  width: 100%;
   height: auto;
-  max-width: 100%;
   object-fit: cover;
   opacity: 0.9;
   transition: opacity 0.3s ease;
-  width: 100%;
-}
-
-#work .card:hover .thumbnail {
-  opacity: 1;
-}
-
-/* Card Info */
-#work .card-info {
+  border-radius: 8px 8px 0 0;
+  }
+  
+  /* ---------------------------------------------description-------------------------------------*/
+  .card-info {
   background-color: rgba(255, 255, 255, 0.8);
   bottom: 0;
   opacity: 0;
@@ -533,59 +524,113 @@ will-change: transform, box-shadow;
   transform: translateY(100%);
   transition: all 0.3s ease;
   width: 100%;
-}
-
-#work .card:hover .card-info {
+  }
+  
+  .card:hover .card-info {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Card Title */
-#work .card-info h3 {
-  color: #333;
-  font-family: 'Roboto', sans-serif;
+  }
+  
+  .card-info h3 {
   font-size: 1.5rem;
   font-weight: bold;
+  color: #333;
   margin-bottom: 8px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-/* Card Description */
-#work .card-info p {
-  color: #666;
   font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.5px;
+  }
+  
+  .card-info p {
   font-size: 1rem;
   line-height: 1.5;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-/* Icon Style */
-#work .card-info i {
+  color: #666;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.3px;
+  }
+  
+  .card-info i {
   color: #333;
   margin-right: 8px;
   vertical-align: middle;
-  transition: color 0.3s ease;
-}
-
-#work .card:hover .card-info i {
-  color: #666;
-}
-
-/* Responsive */
-  /* Responsive */
+  }
+  
+  .cta-button {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 4px;
+  margin-top: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+  background-color: #fff;
+  color: #333;
+  }
+  
+  .card-info .date {
+  font-size: 0.875rem;
+  color: #180fbb;
+  margin-top: 8px;
+  }
+  
+  /* ---------------------------------------------media queries-------------------------------------*/
   @media screen and (max-width: 767px) {
-    #work .card {
-      flex: 0 0 calc(50% - 1rem);
-    }
+  .card {
+  flex: 0 0 calc(50% - 1rem);
   }
-
+  }
+  
   @media screen and (max-width: 480px) {
-    #work .card {
-      flex: 0 0 100%;
+    .card {
+    flex: 0 0 calc(100% - 1rem);
     }
-  }
-
-
+    }
+    
+    /* ---------------------------------------------modal-------------------------------------*/
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    
+    .modal-content {
+      background-color: white;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 60%;
+      max-width: 600px;
+      position: relative;
+    }
+    
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      position: absolute;
+      top: 10px;
+      right: 15px;
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    
 
 /* ---------------------------------------------Background section-------------------------------------*/
 /* ---------------------------------------------Background section-------------------------------------*/

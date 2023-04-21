@@ -8,32 +8,39 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
- // ----------------------works缩略图展开----------------------
+ // ----------------------view detail----------------------
+document.addEventListener('DOMContentLoaded', function () {
+    // 获取模态框及相关元素
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('project-title');
+    const modalDescription = document.getElementById('project-description');
+    const modalDate = document.getElementById('project-date');
+    const modalImage = document.getElementById('project-image');
+    const closeButton = document.querySelector('.close');
 
- // 获取所有作品项和筛选按钮
-const workItems = document.querySelectorAll('.work-item');
-const filterButtons = document.querySelectorAll('.filter-btn');
-
-// 为筛选按钮添加点击事件
-filterButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const filterValue = button.getAttribute('data-filter');
-
-    workItems.forEach(item => {
-      if (filterValue === '*' || item.classList.contains(filterValue.slice(1))) {
-        item.style.display = 'flex';
-      } else {
-        item.style.display = 'none';
-      }
+    // 为每个“查看详情”按钮添加点击事件监听器
+    const ctaButtons = document.querySelectorAll('.cta-button');
+    ctaButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            const cardInfo = button.parentElement;
+            modalTitle.innerText = cardInfo.querySelector('h3').innerText;
+            modalDescription.innerText = cardInfo.querySelector('p').innerText;
+            modalDate.innerText = cardInfo.querySelector('.date').innerText;
+            modalImage.src = cardInfo.previousElementSibling.src;
+            modal.style.display = 'block';
+        });
     });
-  });
-});
 
-// 为作品项添加点击事件，打开模态框
-workItems.forEach(item => {
-  item.addEventListener('click', () => {
-    const modal = new bootstrap.Modal(document.getElementById('workModal'));
-    modal.show();
-  });
+    // 当用户点击关闭按钮时，关闭模态框
+    closeButton.onclick = function () {
+        modal.style.display = 'none';
+    };
+
+    // 当用户点击模态框外部时，关闭模态框
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
 });
 
