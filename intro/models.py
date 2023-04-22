@@ -60,7 +60,9 @@ class Project(models.Model):
     project_title = models.CharField(max_length=255)
     project_description = models.TextField()
     completion_date = models.DateField()
+    custom_description = models.TextField() 
     project_images= models.ImageField(upload_to='project_images')
+    project_url = models.CharField(max_length=255)
     
     def __str__(self):
         return self.project_title

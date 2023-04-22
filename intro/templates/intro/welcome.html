@@ -2,6 +2,12 @@
 
 {% load static %}
 
+
+{% block CSS %}
+<link rel="stylesheet" href="{% static 'css/welcome.css' %}">
+{% endblock %}
+
+
 {% block content %}
 
 
@@ -17,15 +23,15 @@
     <img class="home-photo" src="{{ home.home_photo.url }}" alt="Haibo Fang's photo" data-aos="zoom-in-up"
       data-aos-duration="1500">
     <div class="home-parent-container">
-      <h3 data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="2000">
-        {{ home.Eng_content }}
+      <h3 data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="2000">{{ home.Eng_content }}
       </h3>
-      <h4 data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="2000">
-        {{ home.Ire_content }}
+      <h4 data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="2000">{{ home.Ire_content }}
       </h4>
     </div>
   </div>
 </section>
+
+
 
 <!-- About -->
 <section id="about" class="about-section" style="background-image: url('{{ about.about_background.url }}');">
@@ -48,6 +54,8 @@
     </div>
   </div>
 </section>
+
+
 
 
 <!-- resume -->
@@ -92,34 +100,35 @@
       <ul class="resume-projects-list">
         {% for description in descriptions %}
         <li>
-            <div class="timeline"></div>
-            <div class="resume-project-content">
-                <div class="resume-project-title-container">
-                    <h4 class="resume-project-title">{{ description.desc_title }}</h4>
-                </div>
-                <div class="resume-project-description-container">
-                    <p class="resume-project-description">{{ description.description }}</p>
-                </div>
+          <div class="timeline"></div>
+          <div class="resume-project-content">
+            <div class="resume-project-title-container">
+              <h4 class="resume-project-title">{{ description.desc_title }}</h4>
             </div>
+            <div class="resume-project-description-container">
+              <p class="resume-project-description">{{ description.description }}</p>
+            </div>
+          </div>
         </li>
-    {% endfor %}
+        {% endfor %}
       </ul>
     </div>
     <div class="resume-certifications-section">
       <h3 class="resume-section-heading">Certifications</h3>
       <ul class="resume-certifications-list">
         {% for certification in certifications_list %}
-            <li>{{ certification.certification }}</li>
+        <li>{{ certification.certification }}</li>
         {% endfor %}
-    </ul>
-    
+      </ul>
+
     </div>
   </div>
 </section>
 
 
+
 <!-- works -->
-<section id="work">
+<section id="works">
   <div class="gallery-container">
     {% for project in projects_list %}
     <div class="card">
@@ -128,23 +137,24 @@
         <h3><i class="fas fa-project-diagram"></i> {{ project.project_title }}</h3>
         <p><i class="fas fa-info-circle"></i> {{ project.project_description }}</p>
         <p class="date">Completed on: {{ project.completion_date }}</p>
-        <button class="cta-button" data-project="project{{ forloop.counter }}">View Details</button>
+        <button class="cta-button" data-custom-description="{{ project.custom_description }}"
+          data-project="project{{ forloop.counter }}">View Details</button>
       </div>
     </div>
     {% endfor %}
   </div>
-    <!-- Add more cards as needed -->
-  </div>
   <div id="modal" class="modal">
     <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2 id="project-title"></h2>
-        <p id="project-description"></p>
-        <p id="project-date"></p>
-        <img id="project-image" src="" alt="Project Image" />
+      <span class="close">&times;</span>
+      <h2 id="project-title"></h2>
+      <p id="custom-description"></p>
+      <p id="project-date"></p>
+      <img id="project-image" src="" alt="Project Image" style="width: 80%; height: auto;" />
+      <a id="project-link" href="{{ project.project_url }}" target="_blank"><button>Go Website</button></a>
     </div>
-</div>
+  </div>
 </section>
+
 
 <!-- Contact -->
 <section id="contact" class="bg-success">

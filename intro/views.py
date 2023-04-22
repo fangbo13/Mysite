@@ -23,5 +23,18 @@ class HomeView(TemplateView):
         
         return context
 
+class Error404View(TemplateView):
+    template_name = 'intro/error404.html'
 
-    
+    def dispatch(self, request, exception, *args, **kwargs):
+        response = super().dispatch(request, *args, **kwargs)
+        response.status_code = 404
+        return response
+
+class Error500View(TemplateView):
+    template_name = 'intro/error500.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        response = super().dispatch(request, *args, **kwargs)
+        response.status_code = 500
+        return response

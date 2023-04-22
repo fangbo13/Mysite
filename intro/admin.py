@@ -39,5 +39,5 @@ class DescriptionAdmin(admin.ModelAdmin):
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ['project_title','project_description','completion_date','project_images']
+    list_display = ['project_title','project_description','completion_date','project_images','project_url']
     list_display_links = list_display
