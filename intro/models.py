@@ -67,3 +67,10 @@ class Project(models.Model):
     def __str__(self):
         return self.project_title
 
+class ContactInfo(models.Model):
+    email = models.EmailField(max_length=254)
+    phone1 = models.CharField(max_length=20)
+    phone2 = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.email

@@ -1,6 +1,6 @@
 
 from django.contrib import admin
-from .models import HomeContent,AboutContent,Download,Education,Skill,Description,Certification,Project
+from .models import HomeContent,AboutContent,Download,Education,Skill,Description,Certification,Project,ContactInfo
 
 @admin.register(HomeContent)
 class HomeContentAdmin(admin.ModelAdmin):
@@ -40,4 +40,9 @@ class DescriptionAdmin(admin.ModelAdmin):
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     list_display = ['project_title','project_description','completion_date','project_images','project_url']
+    list_display_links = list_display
+
+@admin.register(ContactInfo)
+class ProjectAdmin(admin.ModelAdmin):
+    list_display = ['email','phone1','phone2']
     list_display_links = list_display

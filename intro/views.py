@@ -4,7 +4,7 @@ from django.views.generic import TemplateView
 from django.shortcuts import redirect
 from django.conf import settings
 from django.db import models
-from .models import HomeContent,AboutContent,Download,Education,Skill,Description,Certification,Project
+from .models import HomeContent,AboutContent,Download,Education,Skill,Description,Certification,Project,ContactInfo
 
 class HomeView(TemplateView):
     template_name = 'intro/welcome.html'
@@ -19,6 +19,7 @@ class HomeView(TemplateView):
         context['descriptions'] = Description.objects.all()
         context['certifications_list'] = Certification.objects.all() 
         context['projects_list'] = Project.objects.all()
+        context['contact'] = ContactInfo.objects.first()
         context['MEDIA_URL'] = settings.MEDIA_URL
         
         return context

@@ -137,8 +137,7 @@
         <h3><i class="fas fa-project-diagram"></i> {{ project.project_title }}</h3>
         <p><i class="fas fa-info-circle"></i> {{ project.project_description }}</p>
         <p class="date">Completed on: {{ project.completion_date }}</p>
-        <button class="cta-button" data-custom-description="{{ project.custom_description }}"
-          data-project="project{{ forloop.counter }}">View Details</button>
+        <button class="cta-button" data-custom-description="{{ project.custom_description }}" data-project-url="{{ project.project_url }}" data-project="project{{ forloop.counter }}">View Details</button>
       </div>
     </div>
     {% endfor %}
@@ -147,7 +146,9 @@
     <div class="modal-content">
       <span class="close">&times;</span>
       <h2 id="project-title"></h2>
-      <p id="custom-description"></p>
+      <div class="custom-description-container">
+        <p id="custom-description"></p>
+      </div>
       <p id="project-date"></p>
       <img id="project-image" src="" alt="Project Image" style="width: 80%; height: auto;" />
       <a id="project-link" href="{{ project.project_url }}" target="_blank"><button>Go Website</button></a>
@@ -155,20 +156,29 @@
   </div>
 </section>
 
-
 <!-- Contact -->
-<section id="contact" class="bg-success">
-  <h2 data-aos="fade-down">Contact Me</h2>
-  <p data-aos="fade-right"><i class="fas fa-envelope"></i> <a style="text-decoration: none; color: inherit;"
-      href="mailto:haibo_fang527@outlook.com">Email: haibo_fang527@outlook.com</a></p>
-  <p data-aos="fade-left"><i class="fas fa-phone"></i> Phone: +86 18701127754</p>
-  <p data-aos="fade-up"><i class="fas fa-phone"></i> Phone: +44 7421724150</p>
+<section id="contact-section" class="contact-section">
+  <div class="contact-container">
+    <h2>Contact Me</h2>
+    <div class="contact-row">
+      <div class="contact-col">
+        <i class="fas fa-envelope contact-icon"></i>
+        <a class="contact-link" href="mailto:{{ contact_info.email }}">{{ contact.email }}</a>
+      </div>
+      <div class="contact-col">
+        <i class="fas fa-phone contact-icon"></i> Phone: {{ contact.phone1 }}
+      </div>
+      <div class="contact-col">
+        <i class="fas fa-phone contact-icon"></i> Phone: {{ contact.phone2 }}
+      </div>
+    </div>
+  </div>
 </section>
 
 
-<script>
-  AOS.init();
-</script>
+
+
+
 {% include 'intro/footer.html' %}
 
 {% endblock %}
